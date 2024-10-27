@@ -51,8 +51,9 @@ INSERT INTO petEvent VALUES
 UPDATE petEvent SET remark='5 kittens, 3 female, 2 male' WHERE petname='Fluffy' AND eventdate ='1995-05-15';
 UPDATE petEvent SET petname='Claws' WHERE eventdate ='1997-08-03';
 UPDATE petPet SET death='2020-09-01' WHERE petname ='Puffball';
-
-
+ALTER TABLE petEvent ADD FOREIGN KEY (petname) REFERENCES petPet(petn
+ame) ON DELETE CASCADE;
+DELETE FROM petPet where owner = 'Harold' and species = 'dog';
 
 
 
